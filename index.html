@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <h1>Fruit-Clicker</h1>
+
+    <p>Click me for apples</p>
+    <button id="appleButton">CLICK ME!</button>
+
+    <br />
+    <h3>Amount of apples: <span id="appleAmount">0</span></h3>
+
+    <script>
+        let name = "my name";
+        let apples = 0;
+        document.getElementById("appleButton").addEventListener("click", fruitClick);
+        function fruitClick() {
+            apples += 1;
+            document.getElementById("appleAmount").innerHTML = apples;
+
+            // cookie saving
+            document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(apples);
+            console.log(document.cookie);
+
+            // localstorage saving
+            localStorage.setItem('amountOfApples', apples);
+            console.log(localStorage.getItem('amountOfApples'));
+        }
+    </script>
+
+</body>
+</html>
