@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Fruit-Clicker</title>
 </head>
 <body>
 
@@ -14,24 +14,35 @@
 
     <br />
     <h3>Amount of apples: <span id="appleAmount">0</span></h3>
+    <p>Average apples pr. second: <span id="averageApples">0</span></p>
+    <br /><br />
 
-    <script>
-        let name = "my name";
-        let apples = 0;
-        document.getElementById("appleButton").addEventListener("click", fruitClick);
-        function fruitClick() {
-            apples += 1;
-            document.getElementById("appleAmount").innerHTML = apples;
+    <h3>Clicker: <span id="clicker">1</span></h3>
+    <h4>Upgrade cost: <span id="clickerPrice">10</span> apples</h4>
+    <button onclick="buyUpgrade(4)">Upgrade clicker</button>
+    <br />
 
-            // cookie saving
-            document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(apples);
-            console.log(document.cookie);
+    <h3>Amount of apple trees: <span id="appleTrees">1</span></h3>
+    <h4>Upgrade cost: <span id="appleTreesPrice">10</span> apples</h4>
+    <button onclick="buyUpgrade(1)">Buy an apple tree</button>
+    <br />
 
-            // localstorage saving
-            localStorage.setItem('amountOfApples', apples);
-            console.log(localStorage.getItem('amountOfApples'));
-        }
-    </script>
+    <h3>Amount of workers: <span id="workers">0</span></h3>
+    <h4>Upgrade cost: <span id="workersPrice">10</span> apples</h4>
+    <button onclick="buyUpgrade(2)">Hire a worker</button>
+    <br />
 
+    <h3>Amount of experienced workers: <span id="experiencedWorkers">0</span></h3>
+    <h4>Upgrade cost: <span id="experiencedWorkersPrice">10</span> apples</h4>
+    <button onclick="buyUpgrade(3)">Hire an experienced worker</button>
+
+    <br /><br />
+    <form>
+        <input type="text" id="userIDInput" />
+    </form>
+    <button id="saveButton">Save Game</button>
+    <button id="loadButton">Load Game</button>
+
+    <script src="app.js"></script>
 </body>
 </html>
